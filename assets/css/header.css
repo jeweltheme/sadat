@@ -1,0 +1,495 @@
+/* ------------ Variables and Mixins ------------ */
+a {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+}
+.overlay-wrapper {
+  position: relative;
+  z-index: 0;
+  perspective: 1000px;
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+}
+.overlay-wrapper:before {
+  content: '';
+  background: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.35s ease;
+  -moz-transition: all 0.35s ease;
+  -ms-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.overlay-wrapper.open:before {
+  opacity: 1;
+  z-index: 9;
+}
+.overlay-wrapper.open .sidebar-menu {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+header .nav .open > a,
+header .nav .open > a:focus,
+header .nav .open > a:hover {
+  background-color: transparent;
+}
+header .header-top {
+  padding: 4.35% 0;
+}
+header .header-top .container {
+  position: relative;
+}
+header .header-top .side-menu-trigger {
+  color: #000;
+  cursor: pointer;
+  font-size: 32px;
+  left: 10px;
+  top: 50%;
+  position: absolute;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+header .header-top .navbar-brand {
+  display: block;
+  float: none;
+  height: 44px;
+  width: 206px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+header .header-top .navbar-brand img {
+  margin: 0 auto;
+  max-width: 206px;
+}
+header .menu-search {
+  height: 30px;
+  right: 15px;
+  top: 50%;
+  overflow: hidden;
+  position: absolute;
+  width: 30px;
+  z-index: 3;
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  transition: width 0.3s;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+header .menu-search .form-trigger {
+  cursor: pointer;
+  color: #000;
+  font-size: 22px;
+  height: 30px;
+  line-height: 30px;
+  right: 0;
+  position: absolute;
+  text-align: center;
+  width: 30px;
+  z-index: 2;
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+header .menu-search.open .form-trigger i:before {
+  content: "\4d";
+  font-size: 28px;
+}
+header .menu-search form {
+  font-family: 'Raleway', sans-serif;
+  position: absolute;
+  right: 35px;
+  z-index: 1;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+header .menu-search form input {
+  background: #fff;
+  border: none;
+  border-bottom: 1px solid #333;
+  border-radius: 0;
+  color: #000;
+  font-size: 15px;
+  height: inherit;
+  opacity: 0;
+  padding: 3px 15px 3px 0;
+  width: 0;
+  -webkit-transition: all .3s ease, opacity 0.3s, width 0.3s;
+  -moz-transition: all .3s ease, opacity 0.3s, width 0.3s;
+  -ms-transition: all .3s ease, opacity 0.3s, width 0.3s;
+  -o-transition: all .3s ease, opacity 0.3s, width 0.3s;
+  transition: all .3s ease, opacity 0.3s, width 0.3s;
+}
+header .menu-search.open {
+  overflow: visible;
+}
+header .menu-search.open form input {
+  opacity: 1;
+  width: 200px;
+}
+header .sidebar-menu {
+  background: #fff;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  overflow: scroll;
+  padding: 1.5%;
+  position: fixed;
+  text-align: center;
+  width: 300px;
+  z-index: 999;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  -moz-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+header .sidebar-menu.open {
+  left: 0;
+}
+header .sidebar-menu .navbar-brand {
+  border-bottom: 1px solid #eaeaea;
+  display: inline-block;
+  height: initial;
+  margin: 0;
+  padding: 22% 0 30%;
+  width: 100%;
+}
+header .sidebar-menu .navbar-brand img {
+  max-height: 25px;
+  padding: 0;
+  max-width: 105px;
+}
+header .sidebar-menu .menu-close {
+  color: #000;
+  cursor: pointer;
+  font-size: 29px;
+  position: absolute;
+  right: 26px;
+  top: 24px;
+}
+header .sidebar-menu ul {
+  margin: 7% 0 0;
+  padding: 0;
+}
+header .sidebar-menu ul li {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 0;
+  position: relative;
+  text-transform: uppercase;
+  width: 100%;
+}
+header .sidebar-menu ul li a {
+  color: #000;
+  line-height: 20px;
+  padding: 12px 0;
+}
+header .sidebar-menu ul li a:hover {
+  background: none;
+  box-shadow: none;
+  text-decoration: none;
+}
+header .sidebar-menu ul li.active a {
+  color: #af7152;
+}
+header .sidebar-menu ul li .sub-menu {
+  height: 0;
+  margin: 0;
+  opacity: 0;
+  -webkit-transition: all .35s ease, opacity 0.35s ease;
+  -moz-transition: all .35s ease, opacity 0.35s ease;
+  -ms-transition: all .35s ease, opacity 0.35s ease;
+  -o-transition: all .35s ease, opacity 0.35s ease;
+  transition: all .35s ease, opacity 0.35s ease;
+}
+header .sidebar-menu ul li .sub-menu a {
+  color: #000;
+  display: inline-block;
+  padding: 3px 0;
+  width: 100%;
+}
+header .sidebar-menu ul li.open .sub-menu {
+  height: auto;
+  opacity: 1;
+}
+header .sidebar-menu::-webkit-scrollbar {
+  display: none;
+}
+header .sidebar-menu:-moz-scrollbar {
+  display: none;
+}
+header .sidebar-menu::-moz-scrollbar {
+  display: none;
+}
+header .sidebar-menu:-ms-scrollbar {
+  display: none;
+}
+header .menu-social {
+  display: inline-block;
+  margin: 25% 0 30px;
+  width: 100%;
+}
+header .menu-social a {
+  color: #aaa;
+  display: inline-block;
+  font-size: 14px;
+  padding: 5px;
+}
+header .header-bottom {
+  background: #171717;
+  overflow: hidden;
+}
+header .header-bottom:hover {
+  overflow: visible;
+}
+header .navbar-default {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+header .navbar-default .navbar-nav {
+  margin: 0;
+  padding: 0;
+}
+header .navbar-default .navbar-nav li {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+header .navbar-default .navbar-nav li a {
+  color: #e4e4e4;
+  display: inline-block;
+  line-height: 60px;
+  padding: 0 25px;
+}
+header .navbar-default .navbar-nav li a:hover {
+  background: transparent !important;
+  color: #af7152 !important;
+  text-decoration: none;
+}
+header .navbar-default .navbar-nav li.active a,
+header .navbar-default .navbar-nav li.active a:focus,
+header .navbar-default .navbar-nav li.active a:visited {
+  background: transparent;
+  color: #af7152;
+}
+header .navbar-default .navbar-nav li.menu-item-has-children {
+  position: relative;
+}
+header .navbar-default .navbar-nav li.menu-item-has-children .sub-menu,
+header .navbar-default .navbar-nav li.menu-item-has-children .children {
+  background: #171717;
+  opacity: 0;
+  padding: 0 18px;
+  text-align: left;
+  -webkit-transition: all .25s ease, opacity 0.35s ease;
+  -moz-transition: all .25s ease, opacity 0.35s ease;
+  -ms-transition: all .25s ease, opacity 0.35s ease;
+  -o-transition: all .25s ease, opacity 0.35s ease;
+  transition: all .25s ease, opacity 0.35s ease;
+}
+header .navbar-default .navbar-nav li.menu-item-has-children .sub-menu li,
+header .navbar-default .navbar-nav li.menu-item-has-children .children li {
+  width: 100%;
+}
+header .navbar-default .navbar-nav li.menu-item-has-children .sub-menu li a,
+header .navbar-default .navbar-nav li.menu-item-has-children .children li a {
+  color: #e4e4e4;
+  line-height: 43px;
+  padding: 0;
+  width: 100%;
+}
+header.style-02 {
+  background: #fff;
+}
+header.style-02 .header-top {
+  padding: 2.8% 0;
+}
+header.style-02 .header-top .navbar-brand {
+  margin-top: 21px;
+}
+header.style-02 .menu-search {
+  right: 0;
+}
+header.style-02 .menu-search form {
+  top: 4px;
+}
+header.style-02 .menu-search form input {
+  padding-left: 15px;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+  background: none;
+  color: #e4e4e4;
+}
+@media (min-width: 768px) {
+  header .navbar-default .navbar-nav {
+    float: none;
+    text-align: center;
+  }
+  header .navbar-default .navbar-nav li {
+    float: none;
+  }
+  header .navbar-default .navbar-nav li.menu-item-has-children .sub-menu,
+  header .navbar-default .navbar-nav li.menu-item-has-children .children {
+    border-top: 1px solid #2d2d2d;
+    left: 0;
+    top: 60px;
+    position: absolute;
+    min-width: 180px;
+    z-index: -1;
+  }
+  header .navbar-default .navbar-nav li.menu-item-has-children .sub-menu li,
+  header .navbar-default .navbar-nav li.menu-item-has-children .children li {
+    border-top: 1px solid #2d2d2d;
+  }
+  header .navbar-default .navbar-nav li.menu-item-has-children .sub-menu li:first-child,
+  header .navbar-default .navbar-nav li.menu-item-has-children .children li:first-child {
+    border-top: none;
+  }
+  header .navbar-default .navbar-nav li.menu-item-has-children:hover .sub-menu,
+  header .navbar-default .navbar-nav li.menu-item-has-children:hover .children {
+    opacity: 1;
+    z-index: 1;
+  }
+  header.style-02 .navbar-collapse {
+    padding: 0;
+  }
+  header.style-02 .navbar-collapse .navbar-nav li:first-child a {
+    padding-left: 0;
+  }
+  header.style-02 .navbar-collapse .menu-search .form-trigger {
+    color: #fff;
+  }
+}
+@media (max-width: 1024px) {
+  header.style-02 .header-top .navbar-brand {
+    margin-top: 13px;
+  }
+}
+@media (max-width: 992px) {
+  header.style-02 .header-top .navbar-brand {
+    margin-top: 5px;
+  }
+  header.style-02 .navbar-default .navbar-nav li a {
+    padding: 0 15px;
+  }
+}
+@media (max-width: 767px) {
+  header .navbar-default .navbar-toggle {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    font-size: 25px;
+    margin: 12px 5px;
+    padding: 0;
+  }
+  header .navbar-default .navbar-toggle:focus {
+    background: none;
+    border: none;
+    outline: 0;
+  }
+  header .navbar-default .navbar-brand {
+    margin-top: 14px;
+    max-width: 105px;
+    max-height: 22px;
+    padding: 0;
+  }
+  header .header-top {
+    padding: 20px 0;
+  }
+  header .sidebar-menu {
+    height: 100%;
+    max-width: 250px;
+  }
+  header .sidebar-menu .menu-close {
+    right: 15px;
+    top: 13px;
+  }
+  header .sidebar-menu .navbar-brand {
+    padding: 15% 0;
+  }
+  header .sidebar-menu .navbar-nav li {
+    padding: 0;
+  }
+  header .sidebar-menu .navbar-nav li a {
+    padding: 10px 0;
+  }
+  header .sidebar-menu .navbar-nav li.menu-item-has-children .sub-menu,
+  header .sidebar-menu .navbar-nav li.menu-item-has-children .children {
+    display: none;
+  }
+  header .sidebar-menu .navbar-nav li.menu-item-has-children.open .sub-menu,
+  header .sidebar-menu .navbar-nav li.menu-item-has-children.open .children {
+    display: block;
+    opacity: 1;
+  }
+  header .navbar-collapse {
+    padding: 0;
+  }
+  header .navbar-collapse .navbar-nav {
+    margin: 20px 0;
+  }
+  header .navbar-collapse .navbar-nav li {
+    display: inline-block;
+    width: 100%;
+  }
+  header .navbar-collapse .navbar-nav li a {
+    line-height: 35px;
+    padding: 0;
+    width: 100%;
+  }
+  header .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu,
+  header .navbar-collapse .navbar-nav li.menu-item-has-children .children {
+    display: none;
+  }
+  header .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu li a,
+  header .navbar-collapse .navbar-nav li.menu-item-has-children .children li a {
+    line-height: 30px;
+  }
+  header .navbar-collapse .navbar-nav li.menu-item-has-children.open .sub-menu,
+  header .navbar-collapse .navbar-nav li.menu-item-has-children.open .children {
+    display: block;
+    opacity: 1;
+  }
+}
