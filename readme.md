@@ -4,11 +4,11 @@ Sadat A Single Page WordPress Starter Theme that build with Vue JS and WordPress
 
 **Features at a glance:**
 
- - **Vue js**: ![Vue.js](https://vuejs.org) One of the progressive Javascript open source Framework. It's easy to handle Web Apps based on Javascript with Vue.
- - **Moment.js Integrated**: ![Moment.js](https://momentjs.com/) is a Javascript Plugin that collaborate to display Dates and Times.
- - **Vue Resource**: ![Vue Resource](https://github.com/pagekit/vue-resource) plugin made for a special purpose for Vue. It will become your supporter for making web requests using a XMLHttpRequest.
- - **Vue Router**: ![Vue Router](https://router.vuejs.org/en/) plugin handle all component for Vue JS. In Sadat Theme we have build several component like Header, Footer, Post, Page, Author. It accomplished the SPA (Single Page Application) for Vue.
- - **Babel**: [Babel](https://babeljs.io/) is a Javascript compiler. In brief, it allows you to use language features “*from the future*”.
+ - **[Vue.js](https://vuejs.org)**: One of the progressive Javascript open source Framework. It's easy to handle Web Apps based on Javascript with Vue.
+ - **[Moment.js](https://momentjs.com/) Integrated**: Moment.js is a Javascript Plugin that collaborate to display Dates and Times.
+ - **[Vue Resource](https://github.com/pagekit/vue-resource)**: It's a plugin made for a special purpose for Vue. It will become your supporter for making web requests using a XMLHttpRequest.
+ - **[Vue Router](https://router.vuejs.org/en/)**: This plugin handle all component for Vue JS. In Sadat Theme we have build several component like Header, Footer, Post, Page, Author. It accomplished the SPA (Single Page Application) for Vue.
+ - **[Babel](https://babeljs.io/)**: Babel is a Javascript compiler. In brief, it allows you to use language features “*from the future*”.
  *For example we can take a look at the following function:*
 
     let myFunction = () => {
